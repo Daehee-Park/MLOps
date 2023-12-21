@@ -20,7 +20,14 @@ export default function UploadButton({ onFileUpload, isUploadComplete }) {
                 component="label"
                 variant="contained"
                 startIcon={isUploadComplete ? <CheckCircleIcon /> : <CloudUploadIcon />}
-                className={`${isUploadComplete ? "bg-green-500 hover:bg-green-500 cursor-default" : ""}`}
+                sx={{
+                    ...(isUploadComplete && {
+                        backgroundColor: 'green',
+                        '&:hover': {
+                            backgroundColor: 'green',
+                        },
+                    }),
+                }}
             >
                 {isUploadComplete ? "업로드 완료!" : "파일 업로드"}
                 <input type="file" hidden onChange={handleFileChange} disabled={isUploadComplete} />
