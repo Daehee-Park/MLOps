@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 main {
-  @apply py-12 md:py-24 lg:py-32 text-black text-center flex flex-col
+  @apply py-4 md:py-6 lg:py-12 text-black text-center flex flex-col
   w-full h-screen items-center text-2xl;
   font-family: 'Roboto', sans-serif;
 }
@@ -14,11 +14,11 @@ main {
 }
 
 h1 {
-  @apply text-6xl font-bold;
+  @apply text-5xl font-bold;
 }
 
 h3 {
-  @apply text-2xl;
+  @apply text-xl;
 }
 
 .App{
@@ -26,7 +26,7 @@ h3 {
 }
 
 .App-header{
-  @apply flex flex-row mb-8;
+  @apply flex flex-row mb-8 items-center justify-center;
 }
 
 .App-body{
