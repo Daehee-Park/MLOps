@@ -7,6 +7,7 @@ import Papa from 'papaparse';
 import Spinner from './spinner';
 import Timeline from './timeline';
 import Button from '@mui/material/Button';
+import DistributionChart from './distribution_chart';
 
 export default function DataContainer() {
     const [data, setData] = useState([]);
@@ -30,22 +31,34 @@ export default function DataContainer() {
     const handleNext = () => {
         const newActiveStep = activeStep + 1;
         setActiveStep(newActiveStep);
-    };    
+    };
 
     return (
         <div>
             <div className='App-header'>
                 <Timeline activeStep={activeStep} />
             </div>
+            {activeStep === 0 && (
+            <>
+            <div className='flex flex-col'>
             <div className='flex flex-row space-x-8'>
                 <UploadButton onFileUpload={handleFileUpload} isUploadComplete={isUploadComplete} />
                 {isUploadComplete && (
-                    <Button variant="contained" onClick={handleNext} component="label">
-                        Next
-                    </Button>
+                <Button variant="contained" onClick={handleNext} component="label">
+                    Next
+                </Button>
                 )}
             </div>
             {isLoading ? <Spinner /> : <DataTable data={data} />}
+            </div>
+            </>
+            )}
+            {activeStep === 1 && (
+            <div className='flex flex-col w-max'>
+                <DataTable data={data} />
+                <DistributionChart data={data} />
+            </div>
+            )}
         </div>
     );
 }

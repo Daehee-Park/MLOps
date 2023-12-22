@@ -3,9 +3,9 @@ import Typography from '@mui/material/Typography';
 
 export default function Spinner() {
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mt-16">
             <CircularProgress />
-            <Typography variant="caption" component="div">
+            <Typography variant="caption" component="div" className='mt-4'>
                 Loading...
             </Typography>
         </div>

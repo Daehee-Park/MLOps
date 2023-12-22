@@ -8,6 +8,10 @@ main {
   font-family: 'Roboto', sans-serif;
 }
 
+Typography {
+  font-family: 'Roboto', sans-serif;
+}
+
 .hero-container {
   @apply flex flex-row items-center justify-center space-x-16
   w-5/6
@@ -31,4 +35,14 @@ h3 {
 
 .App-body{
   @apply flex flex-col;
+}
+
+.chart-container{
+  width: 500px; height: 300px;
+  @apply flex flex-col items-center justify-center p-4;
+}
+
+.chart-wrapper{
+  @apply flex flex-row flex-wrap overflow-x-auto mt-8 h-max;
+  width: 2020px;
 }
